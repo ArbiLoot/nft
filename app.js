@@ -704,7 +704,7 @@ window.onload = () => {
       connectWallet();
     } else {
       try {
-        document.getElementById("button").innerHTML = "Minting...";
+        document.getElementById("mint").innerHTML = "Minting...";
         const signer = await provider.getSigner();
         const account = await signer.getAddress();
         const inputValue = document.getElementById("tokenId").value;
@@ -764,7 +764,7 @@ window.onload = () => {
           position: "top-center",
           icon: "success",
         });
-        document.getElementById("button").innerHTML = "Mint";
+        document.getElementById("mint").innerHTML = "Mint";
         window.open(`${etherscanUrl}/${result.transactionHash}`);
       } catch (e) {}
     }
