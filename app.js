@@ -1,9 +1,7 @@
 const env = "mainnet";
 const chainId = 42161;
-const price = 0.02;
+const price = 0.01;
 
-// const contractAddress = "0x451Ad421e259068a7Cb01Ad1Ec8Be6B4366aCfD1";
-// const etherscanUrl = "https://testnet.bscscan.com/tx/";
 const contractAddress = "0x1899434830318edb494f61a365be7e222183ab93";
 const etherscanUrl = "https://arbiscan.io/tx/";
 let provider = null;
