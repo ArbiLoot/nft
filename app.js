@@ -709,6 +709,7 @@ window.onload = () => {
         const account = await signer.getAddress();
         const inputValue = document.getElementById("tokenId").value;
         if (!inputValue || Math.round(inputValue) !== Number(inputValue)) {
+          document.getElementById("mint").innerHTML = "Mint";
           return $.toast({
             heading: "Error",
             text: "Enter an integer！",
@@ -717,6 +718,7 @@ window.onload = () => {
             icon: "error",
           });
         } else if (inputValue > 10) {
+          document.getElementById("mint").innerHTML = "Mint";
           return $.toast({
             heading: "Error",
             text: "Max amount 10！",
@@ -730,6 +732,7 @@ window.onload = () => {
         const balanceRaw = await provider.getBalance(account);
         const balance = ethers.utils.formatUnits(balanceRaw, 18);
         if (Number(balance) < price * inputValue) {
+          document.getElementById("mint").innerHTML = "Mint";
           return $.toast({
             heading: "Error",
             text: "Insufficient balance！",
